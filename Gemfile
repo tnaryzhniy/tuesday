@@ -23,5 +23,3 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   gem 'graphiql-rails'
 end
-
-

@@ -8,7 +8,7 @@
 /.bundle
 .tool-versions
 
-/node_modules
+app/javascript/react-app/node_modules
 /app/javascript/node_modules/
 /db/schema.rb
 
