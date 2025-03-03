@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql
+    container_name: taras_tuesday_db
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+
+volumes:
+  mysql_volume:
