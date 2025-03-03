@@ -101,7 +101,7 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    graphiql-rails (1.10.3)
+    graphiql-rails (1.10.4)
       railties
     graphql (2.4.10)
       base64
@@ -326,6 +326,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  actioncable
   bootsnap
   brakeman
   debug

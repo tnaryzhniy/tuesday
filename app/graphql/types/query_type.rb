@@ -2,12 +2,20 @@
 
 module Types
   class QueryType < Types::BaseObject
+    field :projects, [Types::ProjectType], null: false do
+      argument :id, ID, required: false
+      argument :name, String, required: false
+    end
+
+    field :tasks, [Types::TaskType], null: false do
+      argument :id, ID, required: false
+      argument :name, String, required: false
+      argument :projectId, ID, required: true
+    end
+
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
     end
-
-    field :projects, [ProjectType], null: false
-    field :tasks, [TaskType], null: false
 
     def node(id:)
       context.schema.object_from_id(id, context)
@@ -25,8 +33,8 @@ module Types
       Project.all
     end
 
-    def tasks
-      Task.all
+    def tasks(projectId:)
+      Task.where(project_id: projectId)
     end
   end
 end
